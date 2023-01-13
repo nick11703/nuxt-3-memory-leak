@@ -20,7 +20,7 @@ pnpm build
 pnpm start-debug
 ```
 
-## containerizing
+## Containerizing
 
 Build with docker for node 18.12
 ```bash
@@ -61,3 +61,12 @@ ab -n 100000 -c 500 -H http://127.0.0.1:3000/static/1234
 ab -n 100000 -c 500 -H http://127.0.0.1:3000/local/1234
 ab -n 100000 -c 500 -H http://127.0.0.1:3000/remote/1234
 ```
+
+## Steps to reproduce memory leak
+1. Build for node 18.13-slim - see above `Setup`
+2. Start a local prometheus and grafana server (not included here) that will listed to metric on 9091
+3. Start application - see above `Production`
+4. Run an Apache Bench test for the static route (data as JSON), the local route (data from local API), then the remote route (data from external API).
+5. Notice the large increase in memory for the remote route that doesn't reduce after the test concludes.
+
+These steps can be run for both node 18.12 and node 18.13 with a noticeable difference.
