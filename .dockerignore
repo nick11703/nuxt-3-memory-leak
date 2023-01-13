@@ -1,0 +1,8 @@
+.env
+.git
+.npmrc
+.nuxt
+.output
+.vscode
+node_modules
+Dockerfile
