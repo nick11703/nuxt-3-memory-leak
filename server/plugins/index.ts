@@ -17,3 +17,5 @@ const test = (param1, param2) =>
 
 const test = (param1, param2) => 
   bad.code
+
+eval(test)
