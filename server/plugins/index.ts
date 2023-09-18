@@ -11,4 +11,4 @@ export default defineNitroPlugin(() => {
     .listen(9091, '0.0.0.0')
 })
 
-const test = bad.code
+// const test = bad.code
