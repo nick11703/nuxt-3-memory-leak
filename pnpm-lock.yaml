@@ -19,6 +19,9 @@ devDependencies:
   eslint-config-standard-with-typescript:
     specifier: ^39.0.0
     version: 39.0.0(@typescript-eslint/eslint-plugin@6.7.2)(eslint-plugin-import@2.28.1)(eslint-plugin-n@16.1.0)(eslint-plugin-promise@6.1.1)(eslint@8.49.0)(typescript@5.2.2)
+  eslint-formatter-json-relative:
+    specifier: ^0.1.0
+    version: 0.1.0
   eslint-plugin-import:
     specifier: ^2.25.2
     version: 2.28.1(@typescript-eslint/parser@6.7.2)(eslint@8.49.0)
@@ -2445,6 +2448,10 @@ packages:
       eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.2)(eslint@8.49.0)
       eslint-plugin-n: 16.1.0(eslint@8.49.0)
       eslint-plugin-promise: 6.1.1(eslint@8.49.0)
+    dev: true
+
+  /eslint-formatter-json-relative@0.1.0:
+    resolution: {integrity: sha512-8uLnyLO3OGAmIsDi4XFkkpYELUOupEqkuzdh6HX3NSNdRhzVFNPBPsvUyujEkUJ2KVUuSjyQG+v5yzLYQFNrhw==}
     dev: true
 
   /eslint-import-resolver-node@0.3.9:
