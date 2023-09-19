@@ -6,10 +6,19 @@
     "dev": "HOST=0.0.0.0 nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --format json --output-file reports/eslint.json '**/*.{ts,js,vue}'"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.49.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "3.0.0",
+    "typescript": "*"
   },
   "dependencies": {
     "prom-client": "^14.1.1"

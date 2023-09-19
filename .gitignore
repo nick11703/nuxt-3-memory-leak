@@ -1,8 +1,10 @@
 node_modules
 *.log*
+.vscode
 .nuxt
 .nitro
 .cache
 .output
 .env
 dist
+reports
