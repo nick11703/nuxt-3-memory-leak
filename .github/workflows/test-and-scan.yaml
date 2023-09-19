@@ -48,7 +48,9 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Merge Main
-        run: git merge main
+        run: |
+          git config --global --add safe.directory ${{ env.GITHUB_WORKSPACE }}
+          git merge main
       - name: Install Depencencies
         run: npm install -g pnpm && pnpm i --frozen-lockfile
       - name: Lint
