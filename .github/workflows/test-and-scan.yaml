@@ -41,7 +41,7 @@ permissions:
 jobs:
   Analysis:
     runs-on: ubuntu-latest
-
+    container: docker://node:18.17.0-slim
     steps:
       - name: Check out current branch
         uses: actions/checkout@v3
