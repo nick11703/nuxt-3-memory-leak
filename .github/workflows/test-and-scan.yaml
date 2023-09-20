@@ -41,14 +41,12 @@ permissions:
 jobs:
   Analysis:
     runs-on: ubuntu-latest
-    # container: docker://node:18.17.0
+    container: docker://node:18.17.0
     steps:
       - name: Check out current branch
         uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Merge Main
-        run: git merge origin/main
       - name: Install Depencencies
         run: npm install -g pnpm && pnpm i --frozen-lockfile
       - name: Lint
