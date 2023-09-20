@@ -7,19 +7,22 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --format json-relative --ignore-path .gitignore --output-file reports/eslint.json '**/*.{ts,js}' || true"
+    "lint": "eslint --format stylish --ignore-path .gitignore '**/*.{ts,js}'",
+    "lint:ci": "eslint --format json-relative --ignore-path .gitignore --output-file reports/eslint.json '**/*.{ts,js}' || true"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint": "^8.49.0",
+    "eslint": "^8.47.0",
     "eslint-config-standard-with-typescript": "^39.0.0",
     "eslint-formatter-json-relative": "^0.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "nuxt": "3.0.0",
-    "typescript": "*"
+    "nuxt": "3.7.3",
+    "typescript": "^5.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
   },
   "dependencies": {
     "prom-client": "^14.1.1"

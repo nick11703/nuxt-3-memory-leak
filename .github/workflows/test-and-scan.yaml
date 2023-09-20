@@ -50,7 +50,7 @@ jobs:
       - name: Install Depencencies
         run: npm install -g pnpm && pnpm i --frozen-lockfile
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint:ci
       - name: Check for lint report
         run: find reports/eslint.json
       - name: Upload lint report
@@ -78,3 +78,17 @@ jobs:
             #-Dsonar.tests= # optional. For more info about Code Coverage, please refer to https://docs.sonarcloud.io/enriching/test-coverage/overview/
             # Adds more detail to both client and server-side analysis logs, activating DEBUG mode for the scanner, and adding client-side environment variables and system properties to the server-side log of analysis report processing.
             #-Dsonar.verbose= # optional, default is false
+      - name: Build Application
+        run: pnpm build
+      - name: Save App Client Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: App - Client
+          path: .output/public
+          if-no-files-found: error
+      - name: Save App Server Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: App - Server
+          path: .output/server
+          if-no-files-found: error
