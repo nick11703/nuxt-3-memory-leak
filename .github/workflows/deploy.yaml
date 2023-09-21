@@ -47,7 +47,12 @@ jobs:
           });
           let fs = require('fs');
           fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/${{ env.SERVER_ARTIFACT_NAME }}.zip`, Buffer.from(download.data));
-
+    - name: Save App Client Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-client-${{ env.SERVER_ARTIFACT_NAME }}.zip
+        path: app-client-${{ env.SERVER_ARTIFACT_NAME }}.zip
+        if-no-files-found: error
     # - name: 'Unzip artifact'
     #   run: unzip app-server.zip
 
