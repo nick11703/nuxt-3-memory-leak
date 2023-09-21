@@ -34,6 +34,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  ARTIFACT_NAME: ${{ github.event.pull_request.number || 'main'}}
+
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
 
@@ -82,12 +85,12 @@ jobs:
       - name: Save App Client Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: app-client
+          name: app-client-${{ env.ARTIFACT_NAME }}
           path: .output/public
           if-no-files-found: error
       - name: Save App Server Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: app-server
+          name: app-server-${{ env.ARTIFACT_NAME }}
           path: .output/server
           if-no-files-found: error
